@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crust &amp; Crumb Bakery — Artisan breads, pastries &amp; custom cakes</title>
+  <meta name="description" content="Pre-order fresh artisan breads, buttery pastries and custom celebration cakes from Crust & Crumb Bakery." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+
+  <!-- Fixed header: brand stays visible while scrolling -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Crust &amp; Crumb Bakery home">
+        <span class="brand-mark">C&amp;C</span>
+        <span class="brand-title">Crust &amp; Crumb Bakery</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="#featured">Favourites</a>
+        <a href="#menu">Menu</a>
+        <a href="#story">Our story</a>
+        <a href="#visit">Visit</a>
+        <span id="nav-auth" class="nav-auth"></span>
+        <button class="cart-btn" id="cart-btn" type="button">Basket <span id="cart-count">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero showcase -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Small-batch · Hand-shaped · Baked at dawn</p>
+        <h1>Fresh-baked bread, <em>golden</em> pastries &amp; cakes made for your moments.</h1>
+        <p class="lead">Pre-order your morning loaf, a box of croissants or a custom celebration cake — we'll bake it fresh and have it waiting for you at the counter.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#menu">Order for pickup</a>
+          <a class="btn btn-ghost" href="#featured">See our favourites</a>
+        </div>
+        <ul class="hero-stats">
+          <li><strong>5 AM</strong><span>ovens are lit</span></li>
+          <li><strong>24 h</strong><span>slow-fermented dough</span></li>
+          <li><strong>100%</strong><span>real butter</span></li>
+        </ul>
+      </div>
+
+      <div class="showcase-wrap">
+        <span class="hero-badge">Fresh from the oven</span>
+        <div class="hero-showcase">
+          <figure class="shot shot-a">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="Freshly baked artisan sourdough bread" />
+            <figcaption>Artisan sourdough</figcaption>
+          </figure>
+          <figure class="shot shot-b">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" alt="Golden butter croissants" />
+            <figcaption>Butter croissants</figcaption>
+          </figure>
+          <figure class="shot shot-d">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Rich chocolate celebration cake" />
+            <figcaption>Custom cakes</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section class="section section-alt" id="featured">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Baker's favourites</p>
+        <h2>The ones everyone comes back for</h2>
+        <p class="muted">Availability updates live from today's baking schedule.</p>
+      </div>
+      <div class="grid" id="featured-grid"></div>
+    </div>
+  </section>
+
+  <!-- Full menu -->
+  <section class="section" id="menu">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">The full menu</p>
+        <h2>Breads, pastries &amp; cakes</h2>
+        <p class="muted">Add what you love, personalise it, and pick a pickup time.</p>
+      </div>
+      <div class="tabs" id="category-tabs"></div>
+      <div class="grid" id="product-grid"></div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="section section-alt" id="story">
+    <div class="container split">
+      <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1000&q=80" alt="Rustic loaves on a wooden bakery counter" loading="lazy" />
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2>Slow dough, honest ingredients</h2>
+        <p>Crust &amp; Crumb began with one oven and one stubborn sourdough starter. Today we still shape every loaf by hand, laminate our butter dough overnight and decorate each cake one at a time.</p>
+        <p>Pre-ordering lets us bake exactly what our neighbours need — less waste, fresher bread, and a cake that's made just for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section class="section" id="visit">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Visit us</p>
+        <h2>Pickup at the counter</h2>
+        <p>Order online, then collect your treats from our shop. Pay when you pick up.</p>
+        <ul class="hours">
+          <li><span>Monday – Friday</span><strong>7:00 AM – 7:00 PM</strong></li>
+          <li><span>Saturday</span><strong>7:00 AM – 7:00 PM</strong></li>
+          <li><span>Sunday</span><strong>7:00 AM – 7:00 PM</strong></li>
+        </ul>
+      </div>
+      <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=1000&q=80" alt="Beautifully decorated cake" loading="lazy" />
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <strong>Crust &amp; Crumb Bakery</strong>
+      <p style="margin:.4rem 0 0">Baked with patience · © <span id="year"></span> Crust &amp; Crumb</p>
+    </div>
+  </footer>
+
+  <!-- Basket drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer" id="cart-drawer" aria-label="Basket">
+    <div class="drawer-head"><h3>Your basket</h3><button class="icon-btn" id="cart-close" aria-label="Close basket">×</button></div>
+    <div class="drawer-body" id="cart-items"></div>
+    <div class="drawer-foot">
+      <div class="row"><span>Total</span><strong class="price" id="cart-total">₱0.00</strong></div>
+      <button class="btn btn-primary btn-block" id="checkout-btn" type="button">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Generic modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="modal-card"><button class="modal-close" data-close aria-label="Close">×</button><div id="modal-body"></div></div>
+  </div>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>

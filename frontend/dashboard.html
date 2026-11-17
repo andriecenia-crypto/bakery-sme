@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My orders — Crust &amp; Crumb Bakery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="dashboard">
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">C&amp;C</span>
+        <span class="brand-title">Crust &amp; Crumb Bakery</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html">Home</a>
+        <span id="nav-auth" class="nav-auth"></span>
+        <button class="cart-btn" id="cart-btn" type="button">Basket <span id="cart-count">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <p class="eyebrow">Customer portal</p>
+      <h1>Hello, <span id="welcome-name">friend</span> 👋</h1>
+      <p class="muted">Order fresh treats and watch your pickup status update live.</p>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="menu">Order treats</button>
+      <button class="tab-btn" data-tab="orders">My orders</button>
+      <button class="tab-btn" data-tab="notifications">Updates <span class="notif-badge hidden" id="notif-badge">0</span></button>
+    </div>
+
+    <section class="tab-panel active" id="tab-menu">
+      <div class="tabs" id="category-tabs"></div>
+      <div class="grid" id="product-grid"></div>
+    </section>
+
+    <section class="tab-panel" id="tab-orders">
+      <div id="orders-list"></div>
+    </section>
+
+    <section class="tab-panel" id="tab-notifications">
+      <div class="table-wrap" id="notif-list"></div>
+    </section>
+  </main>
+
+  <!-- Basket drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer" id="cart-drawer" aria-label="Basket">
+    <div class="drawer-head"><h3>Your basket</h3><button class="icon-btn" id="cart-close" aria-label="Close basket">×</button></div>
+    <div class="drawer-body" id="cart-items"></div>
+    <div class="drawer-foot">
+      <div class="row"><span>Total</span><strong class="price" id="cart-total">₱0.00</strong></div>
+      <button class="btn btn-primary btn-block" id="checkout-btn" type="button">Checkout</button>
+    </div>
+  </aside>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="modal-card"><button class="modal-close" data-close aria-label="Close">×</button><div id="modal-body"></div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Baker dashboard — Crust &amp; Crumb Bakery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="admin">
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">C&amp;C</span>
+        <span class="brand-title">Crust &amp; Crumb Bakery</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html">View shop</a>
+        <span id="nav-auth" class="nav-auth"></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <p class="eyebrow"><span id="role-label">Baker</span> dashboard</p>
+      <h1>Good day, <span id="staff-name">chef</span></h1>
+      <p class="muted">Manage orders, the baking schedule and your menu.</p>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="overview">Overview</button>
+      <button class="tab-btn" data-tab="orders">Orders</button>
+      <button class="tab-btn" data-tab="products">Products</button>
+      <button class="tab-btn" data-tab="schedule">Baking schedule</button>
+      <button class="tab-btn" data-tab="forecast">Forecast</button>
+      <button class="tab-btn" data-tab="team" data-admin-only>Team</button>
+    </div>
+
+    <!-- Overview -->
+    <section class="tab-panel active" id="tab-overview">
+      <div class="stat-grid" id="stat-grid"></div>
+      <h3>Needs attention</h3>
+      <div id="overview-orders"></div>
+    </section>
+
+    <!-- Orders -->
+    <section class="tab-panel" id="tab-orders">
+      <div class="toolbar">
+        <div class="field">
+          <label for="order-status-filter">Status</label>
+          <select id="order-status-filter">
+            <option value="open">Open orders</option>
+            <option value="">All orders</option>
+            <option value="received">Received</option>
+            <option value="baking">Baking</option>
+            <option value="ready_for_pickup">Ready for pickup</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+        <div class="field"><label for="order-date-filter">Pickup date</label><input id="order-date-filter" type="date" /></div>
+      </div>
+      <div id="orders-table"></div>
+    </section>
+
+    <!-- Products -->
+    <section class="tab-panel" id="tab-products">
+      <div class="toolbar"><div class="spacer"></div><button class="btn btn-primary" id="add-product-btn" type="button">+ Add product</button></div>
+      <div id="products-table"></div>
+    </section>
+
+    <!-- Baking schedule -->
+    <section class="tab-panel" id="tab-schedule">
+      <div class="toolbar">
+        <div class="field"><label for="batch-date">Batch date</label><input id="batch-date" type="date" /></div>
+        <div class="spacer"></div>
+        <button class="btn btn-primary" id="add-batch-btn" type="button">+ Schedule batch</button>
+      </div>
+      <div id="batches-table"></div>
+    </section>
+
+    <!-- Forecast -->
+    <section class="tab-panel" id="tab-forecast">
+      <div class="toolbar">
+        <div class="field"><label for="forecast-date">Forecast for</label><input id="forecast-date" type="date" /></div>
+        <div class="spacer"></div>
+        <button class="btn btn-wheat" id="generate-btn" type="button">Create batches from forecast</button>
+      </div>
+      <p class="muted" id="forecast-hint"></p>
+      <div id="forecast-table"></div>
+    </section>
+
+    <!-- Team -->
+    <section class="tab-panel" id="tab-team" data-admin-only>
+      <p class="muted">Promote trusted bakers to <strong>Staff</strong>. Staff can manage orders, products and batches; only admins can change roles.</p>
+      <div id="team-table"></div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="modal-card"><button class="modal-close" data-close aria-label="Close">×</button><div id="modal-body"></div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

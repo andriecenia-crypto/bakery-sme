@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create account — Crust &amp; Crumb Bakery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="register">
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">C&amp;C</span>
+        <span class="brand-title">Crust &amp; Crumb Bakery</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html#menu">Menu</a>
+        <span id="nav-auth" class="nav-auth"></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-wrap">
+    <div class="auth-art"><div><h2>Pre-order. Pick up. Enjoy.</h2><p>Create an account to order custom cakes and follow your bake in real time.</p></div></div>
+    <div class="auth-panel">
+      <div class="auth-card">
+        <p class="eyebrow">Sign up</p>
+        <h1>Join Crust &amp; Crumb</h1>
+        <div id="form-message" class="hidden"></div>
+        <form id="register-form" novalidate>
+          <div class="field"><label for="full_name">Full name</label><input id="full_name" autocomplete="name" required maxlength="120" /></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required /></div>
+          <div class="field"><label for="phone">Phone (optional)</label><input id="phone" type="tel" autocomplete="tel" maxlength="30" /></div>
+          <div class="field-row">
+            <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="new-password" minlength="8" required /></div>
+            <div class="field"><label for="confirm">Confirm</label><input id="confirm" type="password" autocomplete="new-password" required /></div>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Create account</button>
+        </form>
+        <p class="center muted" style="margin-top:1.2rem">Already have an account? <a href="login.html">Log in</a></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: crust-and-crumb
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn backend.app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 60
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: BAKERY_TIMEZONE
+        value: Asia/Manila
+      - key: BAKERY_OPEN_HOUR
+        value: "7"
+      - key: BAKERY_CLOSE_HOUR
+        value: "19"
+      - key: CORS_ORIGINS
+        value: "*"
